@@ -189,4 +189,10 @@ print(X,F)
 df = pd.DataFrame(np.hstack([X, F]), columns=["m","p","t", "ct", "cl"])
 
 # Save the dataframe to a csv file
-df.to_csv("pareto_frontONE.csv", index=False)
+df.to_csv("pareto_frontDOUBLE.csv", index=False)
+
+last_pop = res.pop
+F = np.array([ind.get("F") for ind in last_pop])
+X = np.array([ind.get("X") for ind in last_pop])
+df = pd.DataFrame(np.hstack([X, F]), columns=["m","p","t", "ct", "cl"])
+df.to_csv("popDOUBLE.csv", index=False)
